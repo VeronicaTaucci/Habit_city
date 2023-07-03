@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit City - Register</title>
+    <%- include ('partials/headerFont.ejs') %> 
+    <link rel="stylesheet" href="/external/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/hero.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+    <%- include ('partials/hero.ejs') %> 
+    <div class="form-container py-5">
+        <form class="register rounded shadow">
+            <div class="mb-3">
+              <label for="nameInput" class="form-label">Name</label>
+              <input type="text" class="form-control" id="nameInput" name="name">
+            </div>
+            <div class="mb-3">
+              <label for="emailInput" class="form-label">Email</label>
+              <input type="text" class="form-control" id="emailInput" name="email">
+            </div>
+            <div class="mb-3">
+              <label for="passwordInput" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="passwordInput">
+            </div>
+            <div class="mb-3">
+              <label for="confirmPasswordInput" class="form-label">Confirm Password</label>
+              <input type="password" name="confirmPassword" class="form-control" id="confirmPasswordInput">
+            </div>
+            <div class="mb-3">
+                <p id="userMessage" class="text-danger"></p>
+            </div>
+            <button id="createAccountBtn" class="btn btn-success">Create Account</button>
+        </form>
+    </div>
+    <%- include ('partials/footer.ejs') %> 
+    
+    <script src="/js/register.js"></script>
+    <script src="/external/js/bootstrap.min.js"></script>
+</body>
+</html>

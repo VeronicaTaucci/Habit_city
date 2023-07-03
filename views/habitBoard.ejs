@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit City</title>
+    <%- include ('partials/headerFont.ejs') %> 
+    <link rel="stylesheet" href="/external/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/hero.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/habitBoard.css">
+</head>
+<body>
+    <%- include ('partials/hero.ejs') %> 
+    <%- include ('partials/nav.ejs') %> 
+    <div class="card-container py-4">
+        <% if (noHabits) { %>
+            <h5 class="text-center m-5">Visit the <a href="/manageHabits">Manage Habits</a> page to add habits to your board!</h5>
+        <% } %>
+        <% habits.forEach(habit => { %>
+            <% if (habit.streakNumber === 0) { %>
+                <div id="card-<%= habit.id %>" value="<%= habit.type %>" class="habit-card m-4 rounded shadow neutral">
+                    <p class="habit-title"><%= habit.title %></p>
+                    <div class="habit-main">
+                        <div class="row-buttons">
+                            <button value="<%= habit.id %>" class="btn-primary click-btn m-1">-</button>
+                            <button value="<%= habit.id %>" class="btn-primary click-btn m-1">+</button>
+                        </div>
+                        <p id="streak-<%= habit.id %>" class="streak-number display-3"><%= habit.streakNumber %></p>
+                        <div class="row-buttons">
+                            <button value="<%= habit.id %>" class="btn btn-primary bottom-btn m-1">Reset</button>
+                            <button value="<%= habit.id %>" class="btn btn-primary bottom-btn m-1">Comments</button>
+                        </div>
+                    </div>
+                </div>
+                <% } else if (habit.type === 'positive') { %>
+                    <div id="card-<%= habit.id %>" value="<%= habit.type %>" class="habit-card m-4 rounded shadow positive">
+                        <p class="habit-title"><%= habit.title %></p>
+                        <div class="habit-main">
+                            <div class="row-buttons">
+                                <button value="<%= habit.id %>" class="btn-primary click-btn m-1">-</button>
+                                <button value="<%= habit.id %>" class="btn-primary click-btn m-1">+</button>
+                            </div>
+                            <p id="streak-<%= habit.id %>" class="streak-number display-3"><%= habit.streakNumber %></p>
+                            <div class="row-buttons">
+                                <button value="<%= habit.id %>" class="btn btn-primary bottom-btn m-1">Reset</button>
+                                <button value="<%= habit.id %>" class="btn btn-primary bottom-btn m-1">Comments</button>
+                            </div>
+                        </div>
+                    </div>
+            <% } else { %>
+                <div id="card-<%= habit.id %>" value="<%= habit.type %>" class="habit-card m-4 rounded shadow negative">
+                    <p class="habit-title"><%= habit.title %></p>
+                    <div class="habit-main">
+                        <div class="row-buttons">
+                            <button value="<%= habit.id %>" class="btn-primary click-btn m-1">-</button>
+                            <button value="<%= habit.id %>" class="btn-primary click-btn m-1">+</button>
+                        </div>
+                        <p id="streak-<%= habit.id %>" class="streak-number display-3"><%= habit.streakNumber %></p>
+                        <div class="row-buttons">
+                            <button value="<%= habit.id %>" class="btn btn-primary bottom-btn m-1">Reset</button>
+                            <button value="<%= habit.id %>" class="btn btn-primary bottom-btn m-1">Comments</button>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% }) %>
+    </div>
+    <%- include ('partials/footer.ejs') %> 
+
+    <script src="/js/habitBoard.js"></script>
+    <script src="/external/js/bootstrap.min.js"></script>
+</body>
+</html>

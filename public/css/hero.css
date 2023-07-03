@@ -1,0 +1,148 @@
+.header {
+    width: 100vw;
+    height: 65vh;
+    overflow: hidden;
+}
+
+.header img {
+    width: 100%;
+    height: 65vh;
+    z-index: 0;
+    object-fit: cover;
+}
+
+.header .opacity {
+    height: 65vh;
+    width: 100%;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background-color: black;
+}
+
+.header .title {
+    height: 65vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header h1 {
+    font-size: 5rem;
+    z-index: 2;
+    font-family: 'Rubik Wet Paint', cursive;
+}
+
+@media only screen and (max-width: 1032px) {
+    
+    .header, .header .opacity, .header .title {
+        height: 60vh;
+    }
+
+    .header .title {
+        align-items: flex-end;
+    }
+
+    .header h1 {
+        color: white;
+        padding-bottom: 2rem;
+    }
+
+}
+
+@media only screen and (max-width: 950px) {
+    
+    .header, .header .opacity, .header .title {
+        height: 55vh;
+    }
+
+}
+
+@media only screen and (max-width: 870px) {
+    
+    .header, .header .opacity, .header .title {
+        height: 50vh;
+    }
+
+}
+
+@media only screen and (max-width: 790px) {
+    
+    .header, .header .opacity, .header .title {
+        height: 45vh;
+    }
+
+    .header h1 {
+        padding-bottom: 0.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 710px) {
+    
+    .header img {
+        margin-top: -210px;
+    }
+
+    .header, .header .opacity, .header .title {
+        height: 40vh;
+    }
+
+    .header h1 {
+        padding-bottom: 0;
+    }
+
+}
+
+@media only screen and (max-width: 635px) {
+    
+    .header, .header .opacity, .header .title {
+        height: 35vh;
+    }
+
+    .header h1 {
+        padding-bottom: 0rem;
+        font-size: 4rem;
+    }
+
+}
+
+@media only screen and (max-width: 555px) {
+    
+    .header, .header .opacity, .header .title {
+        height: 30vh;
+    }
+
+    .header h1 {
+        font-size: 3.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 475px) {
+    
+    .header, .header .opacity, .header .title {
+        height: 25vh;
+    }
+
+    .header h1 {
+        font-size: 3rem;
+    }
+
+}
+
+@media only screen and (max-width: 395px) {
+    
+    .header, .header .opacity, .header .title {
+        height: 20vh;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+}

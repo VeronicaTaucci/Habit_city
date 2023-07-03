@@ -1,0 +1,5 @@
+node_modules/
+seeders/
+config/configElephant.json
+config/
+config/config.json

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include ('partials/headerFont.ejs') %> 
+    <link rel="stylesheet" href="/external/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/hero.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/manageHabits.css">
+  </head>
+
+  <body>
+    <%- include ('partials/hero.ejs') %>
+      <%- include ('partials/nav.ejs') %>
+
+        <div class="main-content">
+          <div class="addHabit">
+            <input type="text" id="habitInput" name="HabitInput" value="" placeholder="Add a habit to track">
+
+            <div class="radiosAndButton">
+              <div>
+                <span id="positive">
+                  <input checked type="radio" id="habitPositive" name="habitType" value="">
+                  <label for="habitPositive">Positive</label>
+                </span>
+                <span id="negative">
+                  <input type="radio" id="habitNegative" name="habitType" value="">
+                  <label for="habitNegative">Negative</label>
+                </span>
+              </div>
+              <button class="btn btn-success add">Add habit</button>
+            </div>
+          </div>
+
+          <div>
+            <ul class="list-group">
+              <% habits.forEach(item=> { %>
+                <li class="list-items list-group-item">
+                  <label id=<%=item.id %> class="<%= item.title %>" for="<%= item.title %>">
+                        <%= item.title %>
+                  </label>
+                  <div>
+                    <button  value="<%= item.title %> " class="m-1 btn btn-outline-success editBtn" id=<%=item.id %>>Edit</button>
+                    <button id="<%=item.id%>" class="m-1 btn btn-outline-danger habit"> Delete</button>
+                  </div>
+                </li>
+                <% }) %>
+            </ul>
+            <form class="mainForm" id="habitForm" action="/manageHabits" method="GET">
+              <label for="editButton"></label>
+              <input  type="hidden" name="habitId" />
+              <input id="updateInput" type="text" name="habitName" disabled  placeholder="Make update" />
+              <div class="updateButtonContainer">
+                <input type="submit" id="submit" value="Update"  disabled class="btn btn-success add" />
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <%- include ('partials/footer.ejs') %>
+
+
+          <script src="/js/manageHabitsCL.js"></script>
+          <script src="/external/js/bootstrap.min.js"></script>
+  </body>
+
+</html>

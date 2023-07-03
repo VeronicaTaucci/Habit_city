@@ -1,0 +1,50 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5b8e7d;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.p-header {
+    text-decoration: underline solid;
+}
+
+.panel p {
+    margin: 0.25rem 0;
+}
+
+.line-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.line-item a:hover, .line-item a:focus, .line-item a:active {
+    color: white;
+    text-decoration: none;
+}
+
+.line-item a:hover {
+    text-decoration: underline solid;
+}
+
+@media only screen and (max-width: 650px) {
+    .footer .left {
+        display: none;
+    }
+
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer .middle {
+        margin-top: 1rem;
+    }
+
+    .footer .right {
+        margin: 1rem 0;
+    }
+}
